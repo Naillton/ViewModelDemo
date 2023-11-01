@@ -24,6 +24,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -58,8 +59,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun ScreenSetup(model: DemoViewModel = viewModel()) {
-    Log.i("TAGY", model.result)
-    Log.i("TAGY", model.isFahrenheit.toString())
+    // usando o observeAsState para observar os dados mutaveis no liveData
+    // val result by model.result.observeAsState("")
+    // val isFahrenheit by model.isFahrenheit.observeAsState(true)
     MainScreen(
         isFahrenheit = model.isFahrenheit,
         result = model.result,

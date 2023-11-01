@@ -16,6 +16,9 @@ class DemoViewModel: ViewModel() {
     var isFahrenheit by mutableStateOf(true)
     // criando estado para exibir o resultado da temperatura
     var result by mutableStateOf("")
+    // usando o liveData
+    // var isFahrenheit: MutableLiveData<Boolean> = MutableLiveData(true)
+    // var result: MutableLiveData<String> = MutableLiveData("")
 
     // funcao de conversao, onde os resultados que seram retornados sao strings
     fun convert(temp: String) {
